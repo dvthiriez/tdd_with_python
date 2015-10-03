@@ -1,0 +1,4 @@
+db.sqlite3
+.AppleDouble
+__pycache__
+*.pyc
