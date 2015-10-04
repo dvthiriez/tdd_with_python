@@ -12,6 +12,11 @@ class NewVisitorTest(unittest.TestCase):
     def tearDown(self):
         self.browser.quit()
 
+    def check_for_rows_in_list_table(self, row_text):
+        table = self.browser.find_element_by_id('id_list_table')
+        rows = table.find_elements_by_tag_name('tr')
+        self.assertIn(row_text, [row.text for row in rows])
+
     def test_can_start_a_list_and_retrieve_it_later(self):
         # David has heard about a cool new online to-do app. He goes
         # to check out tits homepage
@@ -37,10 +42,7 @@ class NewVisitorTest(unittest.TestCase):
         # "1: Change to stock exhaust on MSM for smog check" as an item in
         # to-do list
         inputbox.send_keys(Keys.ENTER)
-
-        table = self.browser.find_element_by_id('id_list_table')
-        rows = table.find_elements_by_tag_name('tr')
-        self.assertIn('1: Change to stock exhaust on MSM for smog check', [row.text for row in rows])
+        self.check_for_rows_in_list_table('1: Change to stock exhaust on MSM for smog check')
 
         # There is still a text box inviting her to add another item. He
         # enters "Take car to smog check station"
@@ -49,10 +51,8 @@ class NewVisitorTest(unittest.TestCase):
         inputbox.send_keys(Keys.ENTER)
 
         # The page updates again, and now shows both items on his list
-        table = self.browser.find_element_by_id('id_list_table')
-        rows = table.find_elements_by_tag_name('tr')
-        self.assertIn('1: Change to stock exhaust on MSM for smog check', [row.text for row in rows])
-        self.assertIn('2: Take car to smog check station', [row.text for row in rows])
+        self.check_for_rows_in_list_table('1: Change to stock exhaust on MSM for smog check')
+        self.check_for_rows_in_list_table('2: Take car to smog check station')
 
         # David wonders whether the site will remember his list. Then he see
         # that the site has generated a unique URL for him -- there is some
