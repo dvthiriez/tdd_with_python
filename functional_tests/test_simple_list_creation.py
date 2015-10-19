@@ -32,7 +32,7 @@ class NewVisitorTest(FunctionalTest):
         inputbox.send_keys(Keys.ENTER)
         david_list_url = self.browser.current_url
         self.assertRegex(david_list_url, '/lists/.+')
-        self.check_for_rows_in_list_table('1: Change to stock exhaust on MSM for smog check')
+        self.check_for_row_in_list_table('1: Change to stock exhaust on MSM for smog check')
 
         # There is still a text box inviting her to add another item. He
         # enters "Take car to smog check station"
@@ -41,8 +41,8 @@ class NewVisitorTest(FunctionalTest):
         inputbox.send_keys(Keys.ENTER)
 
         # The page updates again, and now shows both items on his list
-        self.check_for_rows_in_list_table('1: Change to stock exhaust on MSM for smog check')
-        self.check_for_rows_in_list_table('2: Take car to smog check station')
+        self.check_for_row_in_list_table('1: Change to stock exhaust on MSM for smog check')
+        self.check_for_row_in_list_table('2: Take car to smog check station')
 
         # Now a new user, Francis, comes along to the site.
 
