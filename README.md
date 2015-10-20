@@ -1,8 +1,7 @@
 Test-Driven Development with Python
 ===================================
-
-Repo tracking my progress of working through Harry J.W. Percival's __Test-Driven Development with Python__ 
-Book is available @ http://www.obeythetestinggoat.com
+Repo tracking my progress of working through Harry J.W. Percival's book on TDD
+ __Test-Driven Development with Python__ available @ http://www.obeythetestinggoat.com
 
 ## Objective
 To become savvy with automated testing, test-driven development (TDD), and Django.
