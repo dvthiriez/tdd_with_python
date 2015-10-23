@@ -21,7 +21,7 @@ To become savvy with automated testing, test-driven development (TDD), and Djang
   - [x] Chapter 9: Automating Deployment with Fabric
   - [x] Chapter 10: Input Validation and Test Organisation
   - [x] Chapter 11: A Simple Form
-  - [ ] Chapter 12: More Advanced Forms
+  - [x] Chapter 12: More Advanced Forms
   - [ ] Chapter 13: Dipping Our Toes, Very Tentatively, into JavaScript
   - [ ] Chapter 14: Deploying Our New Code
 
